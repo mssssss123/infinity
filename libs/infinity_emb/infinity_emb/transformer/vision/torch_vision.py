@@ -60,8 +60,8 @@ class TIMM(BaseTIMM):
         if self.is_colipali:
             CHECK_COLPALI_ENGINE.mark_required()
             from colpali_engine.models import (  # type: ignore
-                ColIdefics2,
-                ColIdefics2Processor,
+                # ColIdefics2,
+                # ColIdefics2Processor,
                 ColPali,
                 ColPaliProcessor,
                 ColQwen2,
@@ -75,13 +75,13 @@ class TIMM(BaseTIMM):
                 "ColPali": ColPali,
                 "ColQwen2": ColQwen2,
                 # "ColQwen2_5": ColQwen2_5,
-                "ColIdefics2": ColIdefics2,
+                # "ColIdefics2": ColIdefics2,
             }[config.architectures[0]]
             processor_cls = {
                 "ColPali": ColPaliProcessor,
                 "ColQwen2": ColQwen2Processor,
                 # "ColQwen2_5": ColQwen2_5_Processor,
-                "ColIdefics2": ColIdefics2Processor,
+                # "ColIdefics2": ColIdefics2Processor,
             }[config.architectures[0]]
 
             self.model = model_cls.from_pretrained(
